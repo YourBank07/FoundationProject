@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remote Control</title>
+    <style>
+        body { background: #222; color: white; font-family: Arial; text-align: center; }
+        button {
+            width: 80%;
+            padding: 20px;
+            margin: 15px;
+            font-size: 24px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Remote Control</h1>
+
+<button onclick="send('increase')">Increase The Volume</button>
+<button onclick="send('decrease')">Decrease The Volume</button>
+<button onclick="send('close')">Close This Program</button>
+<button onclick="send('firefox')">Open Firefox</button>
+<button onclick="send('spotify')">Open Spotify</button>
+<button onclick="send('shutdown')">Shutdown Device</button>
+
+<script>
+function send(cmd) {
+    fetch('/action?cmd=' + cmd);
+}
+</script>
+
+</body>
+</html>
+
